@@ -11,7 +11,6 @@ import java.awt.*;
 public class Client extends Thread {
   private static Socket s = null;
   private static OutputStream output;
-  private static DataInputStream input;
   static DataOutputStream dataOutput;
   private static Robot r;
 
@@ -24,11 +23,10 @@ public class Client extends Thread {
       dataOutput = new DataOutputStream(s.getOutputStream());
       dataOutput.writeUTF(nomPc);
       r = new Robot();
-      input = new DataInputStream(s.getInputStream());
       new ReceiveEvent(s, r);
       new SendImage(s, output, r);
     } catch (Exception e) {
-
+      e.printStackTrace();
     }
 
   }

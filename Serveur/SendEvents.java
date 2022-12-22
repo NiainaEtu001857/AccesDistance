@@ -72,7 +72,7 @@ public class SendEvents implements MouseListener, MouseMotionListener, KeyListen
         int Click = 4;
         if (e.getButton() == MouseEvent.BUTTON1) {
             Click = 16;
-        } else if (e.getButton() == MouseEvent.BUTTON2) {
+        } else if (e.getButton() == MouseEvent.BUTTON3) {
             Click = 4;
         }
         System.out.println(Click);
